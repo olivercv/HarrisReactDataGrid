@@ -20,6 +20,7 @@ function App() {
 
   const gridRef = useRef();
   const [scrollMode, setScrollMode] = useState('vertical');
+
   // date formatting
   const dateFormatter = (params) => {
     let date = new Date(params.value);
@@ -95,6 +96,7 @@ function App() {
    const onGridSizeChanged = useCallback((params) => {
     // get the current grids width
     let gridWidth = document.getElementById('grid-wrapper').offsetWidth;
+    let mode = document.getElementById('select-mode').value;
     // keep track of which columns to hide/show
     let columnsToShow = [];
     let columnsToHide = [];
@@ -113,13 +115,19 @@ function App() {
         }
       }
     }
-    if(scrollMode === 'vertical') {
+    if(mode === 'vertical') {
       // show/hide columns based on current grid width
       gridRef.current.columnApi.setColumnsVisible(columnsToShow, true);
       gridRef.current.columnApi.setColumnsVisible(columnsToHide, false);
-      // fill out any available space to ensure there are no gaps
-      gridRef.current.api.sizeColumnsToFit();
+    } else if (mode === 'both') {
+      gridRef.current.columnApi.setColumnsVisible(columnsToHide, true);
+    } else {
+      gridRef.current.columnApi.setColumnsVisible(columnsToShow, true);
+      gridRef.current.columnApi.setColumnsVisible(columnsToHide, false);
     }
+
+    // fill out any available space to ensure there are no gaps
+    gridRef.current.api.sizeColumnsToFit();
     
   }, []);
 
@@ -147,7 +155,7 @@ function App() {
       </div>
       <div className='selectScroll'>
         <p>Scroll Mode: 
-          <select value={scrollMode} onChange={changeScrollMode}>
+          <select id='select-mode' value={scrollMode} onChange={changeScrollMode}>
             <option value="vertical">Vertical</option>
             <option value="both" >Both</option>
             <option value="none" >None</option>
