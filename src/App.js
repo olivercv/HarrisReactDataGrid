@@ -115,11 +115,8 @@ function App() {
         }
       }
     }
-    if(mode === 'vertical') {
-      // show/hide columns based on current grid width
-      gridRef.current.columnApi.setColumnsVisible(columnsToShow, true);
-      gridRef.current.columnApi.setColumnsVisible(columnsToHide, false);
-    } else if (mode === 'both') {
+    // show/hide columns based on current grid width
+    if(mode === 'both') {
       gridRef.current.columnApi.setColumnsVisible(columnsToHide, true);
     } else {
       gridRef.current.columnApi.setColumnsVisible(columnsToShow, true);
