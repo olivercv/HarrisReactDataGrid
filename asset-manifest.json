@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HarrisReactDataGrid/static/css/main.861bf6a1.css",
+    "main.js": "/HarrisReactDataGrid/static/js/main.9aac715e.js",
+    "static/js/787.06f65e07.chunk.js": "/HarrisReactDataGrid/static/js/787.06f65e07.chunk.js",
+    "index.html": "/HarrisReactDataGrid/index.html",
+    "main.861bf6a1.css.map": "/HarrisReactDataGrid/static/css/main.861bf6a1.css.map",
+    "main.9aac715e.js.map": "/HarrisReactDataGrid/static/js/main.9aac715e.js.map",
+    "787.06f65e07.chunk.js.map": "/HarrisReactDataGrid/static/js/787.06f65e07.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.861bf6a1.css",
+    "static/js/main.9aac715e.js"
+  ]
+}
