@@ -96,6 +96,7 @@ function App() {
    const onGridSizeChanged = useCallback((params) => {
     // get the current grids width
     let gridWidth = document.getElementById('grid-wrapper').offsetWidth;
+    // get current select scroll mode value
     let mode = document.getElementById('select-mode').value;
     // keep track of which columns to hide/show
     let columnsToShow = [];
