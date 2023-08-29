@@ -77,7 +77,6 @@ function App() {
   const changeScrollMode = e => {
     let scrollModeSelected = e.target.value;
     setScrollMode(scrollModeSelected);
-    console.log('Este valor ', e.target.value);
   };
 
 
@@ -94,7 +93,6 @@ function App() {
 
    // run when Grid Size event changed
    const onGridSizeChanged = useCallback((params) => {
-    console.log('entro a GridSize ', scrollMode);
     // get the current grids width
     let gridWidth = document.getElementById('grid-wrapper').offsetWidth;
     // keep track of which columns to hide/show
